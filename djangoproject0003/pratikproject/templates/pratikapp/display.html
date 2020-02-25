@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if request.session %}
+    <table>
+      <thead>
+         <th>Name</th>
+         <th>Quantity</th>
+      </thead>
+        {% for key,value in request.session.items %}
+        <tr>
+          <td>{{key}}</td>
+          <td>{{value}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+    {% else%}
+      print('not found')
+     {% endif %}
+  </body>
+</html>
